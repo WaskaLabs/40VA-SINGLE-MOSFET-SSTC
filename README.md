@@ -1,41 +1,41 @@
 # 40VA-SINGLE-MOSFET-SSTC
 
-IF ANYONE WOULD LIKE TO COOPERATE ON THE PROJECT OR INTERRUPT DESIGNS, HAVE ANY QUESTIONS OR COMMENTS, FEEL FREE TO CONTACT ME.
+if anyone would like to cooperate on the project or interrupt designs, have any questions or comments, feel free to contact me.
 
-FOR MORE PICTURES AND VIDEOS OF THE COIL IN ACTION GO TO : https://www.instagram.com/waskalabs/
-
-
-AFTER POSTING SOME PICTURES OF MY COMPLETED DESIGN I HAVE HAD QUITE A FEW PEOPLE ASK ME FOR SCHEMATICS / FILES / BUILD INFO. THE ORIGINAL INTENTION OF THE DESIGN WAS TO CREATE A SINGLE PCB DRIVER FOR ANY POSSIBLE CONFIGURATION OF MODERATELY LOW VOLTAGE TRANSFORMER BASED TESLA COILS THAT I COULD USE AS A SIMPLE AND QUICK PLATFORM FOR DEVELOPING A VARIETY OF SMALL DESKTOP TESLA COIL DESIGNS AND LEARN MORE ABOUT SSTC OPERATION. THIS DESIGN IS A MIXTURE OF STEVE WARDS CLASS E AND MINI SSTC BUILDS WITH SOME SMALL MODIFICATIONS. FOR DETIALS ON THE DESIGN GO TO (https://www.stevehv.4hv.org/SSTC5.htm). I DEVELOPED THE V0 PCB DESIGN TO BE MILLED OUT AT HOME USING A PCB MILL USING A ~0.5MM ENDMILL. YOU DONT HAVE TO USE A MILL HERE - THATS JUST WHAT I DESIGNED THE TOLERANCES FOR. ANY METHOD OF DIY PCB PRODUCTION SHOULD WORK. AFTER DEVELOPING AND TESTING THE DRIVER I PUT TOGETHER A SMALL TEST COIL, TUNED EVERYTHING, AND HAD A RELATIVELY IMPRESSIVE MINI COIL IN ABOUT A DAY. THE V0 DESIGN HAS A WELL ANNOTATED SCHEMATIC AND PCB WITH DESCRIPTIONS AND INFORMATION THAT WILL HOPEFULLY BE EASY FOR THE NOVICE TO UNDERSTAND AND RECREATE. THERE ARE MANY ONLINE RESOURCES FOR UNDERSTANDING THE GENERAL OPERATION OF SSTCS SO I WILL NOT BE COVERING EVERYHTING IN DETAIL HERE BUT ONLY EXPLAINING THE SPECS OF MY MINI COIL BUILD HERE (LINKS TO MORE RESOURCES BELOW).
+for more pictures and videos of the coil in action go to : https://www.instagram.com/waskalabs/
 
 
-THE V1 PCB DESIGN HAS BEEN MADE FOR PROPER PCB PRODUCTION AND INCLUDES GOOD HIGH POWER PCB DESIGN, EXTERNAL INTERRPUTER PINS, BETTER WIRE CONNECTION POINTS, AND HAS BEEN MADE TO BE CONFIGURABLE FOR USE WITH RAW MAINS POWER USING AN EXTERNAL TRANSFORMER AS THE LOW VOLTAGE SOURCE. AS OF WRITING THIS THE PCBS ARE CURRENTLY IN PRODUCTION AND HAVE NOT ARRIVED YET. WHEN THEY DO I WILL BE TESTING MAINS VERSIONS OF THE DESIGN.
+after posting some pictures of my completed design i have had quite a few people ask me for schematics / files / build info. the original intention of the design was to create a single pcb driver for any possible configuration of moderately low voltage transformer based tesla coils that i could use as a simple and quick platform for developing a variety of small desktop tesla coil designs and learn more about sstc operation. this design is a mixture of steve wards class e and mini sstc builds with some small modifications. for detials on the design go to (https://www.stevehv.4hv.org/sstc5.htm). i developed the v0 pcb design to be milled out at home using a pcb mill using a ~0.5mm endmill. you dont have to use a mill here - thats just what i designed the tolerances for. any method of diy pcb production should work. after developing and testing the driver i put together a small test coil, tuned everything, and had a relatively impressive mini coil in about a day. the v0 design has a well annotated schematic and pcb with descriptions and information that will hopefully be easy for the novice to understand and recreate. there are many online resources for understanding the general operation of sstcs so i will not be covering everyhting in detail here but only explaining the specs of my mini coil build here (links to more resources below).
 
 
-
-
-# MINI COIL DESIGN SPECIFICATIONS  (V0 PCB ONLY):
-
-SECONDARY COIL = ~ 5.5 INCH 34AWG SECONDARY COIL WOUND ON 3.5 INCH PVC ~ 430KHZ (ALSO TESTED WITH A ~6.5" 395KHZ COIL WHICH GAVE EVEN BETTER RESULTS)
-
-PRIMARY COIL   = ~ 4.5 INCH, 3 TURNS, 14 AWG BRAIDED WIRE
-
-TRANSFORMER    = UL1585 24V 40VA (WHITE AND BLACK WIRES FOR 120V)
-
-555 INTERRUPT  = ~ 7 - 480HZ
-
-BUS CAPACITORS = 2 X 35V 22000UF CAPS
-
-MOSFET         = IRFP460 (USE FOR ANY HIGH FREQUENCY COIL)
-
-AFTER POWERING UP THE FIRST COIL AND PLAYING AROUND WITH IT A BIT - IT BECAME IMMEDIATELY APPARENT THAT THE 555 INTERRUPTER IS NOT THE WAY TO GO. I LEFT IT ON THE DESIGN AS A SIMPLE WAY TO GET STARTED - BUT I WOULD NOT RECOMMEND IT FOR CONTINUAL USE. THE ISSUE IS THE "ON TIME" (TIME THAT THE COIL IS POWERED UP ON EACH PULSE) IS MUCH LONGER THAN NECESSARY. THE COIL WOULD RAMP UP AND GENERATE AN ARC, BUT WOULD CONTINUE TO BURN AWAY IN CONTINUOUS WAVE OPERATION UNTIL BEING SWITCHED OFF BY THE LOW PULSE OF THE 555. THIS CAN CAUSE UNNECESSARY STRAIN ON THE MOSFET, DRAINS THE BUS CAPS, AND ALSO TAKES AWAY FROM THE AESTHETIC OF THE LARGER ARCS. MY SOLUTION TO THIS WAS TO REMOVE THE 555 CHIP AND SOLDER A 3 PIN MALE TO FEMALE DUPONT WIRE TO THE CHIP SOCKET (INTERRUPT, 12V, GND PINS) AND RUN IT INTO AN ARDUINO NANO CLONE (PIN 9, VIN, GND, RESPECTIVELY). THE ARDUINO SHOULD BE PROGRAMMED TO GIVE AN ON-TIME OF BETWEEN 1 - 5 MILLISECONDS (I HAVE STUCK WITH 2 MS). I HAAVE DECIDED TO ADD A POTENTIOMETER TO VARY THE OFF TIME OF THE DESIGN TO CYCLE BETWEEN 2 - 1000 HZ. THE ARDUINO TONE LIBRARY WAS ALSO USED SUCCESSFULLY CREATE AUDIO OUTPUT.
-
-I WILL NOT BE ADDING ANY MORE DETAIL ABOUT THE INTERRUPTER DESIGNS UNTIL THE V1 PCBS ARE COMPLETE. ONCE THEY ARE IN AND TEST COILS ARE BUILT I WILL BE MAKING VARIOUS INTERRUPTER ADDONS SUCH AS STACCATO MODE, ISOLATED AUDIO INPUT, MULTIPLE POTENTIOMETERS FOR VARIED ON AND OFF TIMES OVER A GIVEN RANGE, ETC. AND WILL POST FINISHED DEVELOPMENTS HERE.
+the v1 pcb design has been made for proper pcb production and includes good high power pcb design, external interrputer pins, better wire connection points, and has been made to be configurable for use with raw mains power using an external transformer as the low voltage source. as of writing this the pcbs are currently in production and have not arrived yet. when they do i will be testing mains versions of the design.
 
 
 
-FOR MORE DETAILED EXPLAINATIONS OF SSTC OPERATION & DESIGN:
 
-https://www.stevehv.4hv.org/SSTCindex.htm
+# mini coil design specifications  (v0 pcb only):
+
+secondary coil = ~ 5.5 inch 34awg secondary coil wound on 3.5 inch pvc ~ 430khz (also tested with a ~6.5" 395khz coil which gave even better results)
+
+primary coil   = ~ 4.5 inch, 3 turns, 14 awg braided wire
+
+transformer    = ul1585 24v 40va (white and black wires for 120v)
+
+555 interrupt  = ~ 7 - 480hz
+
+bus capacitors = 2 x 35v 22000uf caps
+
+mosfet         = irfp460 (use for any high frequency coil)
+
+after powering up the first coil and playing around with it a bit - it became immediately apparent that the 555 interrupter is not the way to go. i left it on the design as a simple way to get started - but i would not recommend it for continual use. the issue is the "on time" (time that the coil is powered up on each pulse) is much longer than necessary. the coil would ramp up and generate an arc, but would continue to burn away in continuous wave operation until being switched off by the low pulse of the 555. this can cause unnecessary strain on the mosfet, drains the bus caps, and also takes away from the aesthetic of the larger arcs. my solution to this was to remove the 555 chip and solder a 3 pin male to female dupont wire to the chip socket (interrupt, 12v, gnd pins) and run it into an arduino nano clone (pin 9, vin, gnd, respectively). the arduino should be programmed to give an on-time of between 1 - 5 milliseconds (i have stuck with 2 ms). i haave decided to add a potentiometer to vary the off time of the design to cycle between 2 - 1000 hz. the arduino tone library was also used successfully create audio output.
+
+i will not be adding any more detail about the interrupter designs until the v1 pcbs are complete. once they are in and test coils are built i will be making various interrupter addons such as staccato mode, isolated audio input, multiple potentiometers for varied on and off times over a given range, etc. and will post finished developments here.
+
+
+
+for more detailed explainations of sstc operation & design:
+
+https://www.stevehv.4hv.org/sstcindex.htm
 
 https://www.loneoceans.com/labs/#
 
