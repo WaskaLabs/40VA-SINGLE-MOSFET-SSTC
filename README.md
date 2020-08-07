@@ -2,10 +2,10 @@
 
 If anyone would like to cooperate on the project or interrupt designs, have any questions or comments, feel free to contact me.
 
-For more pictures and videos of the coil in action go to : https://www.Instagram.Com/waskalabs/
+For more pictures and videos of the coil in action go to : https://www.instagram.com/waskalabs/
 
 
-After posting some pictures of my completed design I have had quite a few people ask me for schematics / files / build info. The original intention of the design was to create a single pcb driver for any possible configuration of moderately low voltage transformer based tesla coils that I could use as a simple and quick platform for developing a variety of small desktop tesla coil designs and learn more about sstc operation. This design is a mixture of steve wards class e and mini sstc builds with some small modifications. For detials on the design go to (https://www.Stevehv.4hv.Org/sstc5.Htm).I developed the V0 pcb design to be milled out at home using a pcb mill using a ~0.5mm endmill. You dont have to use a mill here - thats just what I designed the tolerances for. Any method of diy pcb production should work. After developing and testing the driver I put together a small test coil, tuned everything, and had a relatively impressive mini coil in about a day. The V0 design has a well annotated schematic and pcb with descriptions and information that will hopefully be easy for the novice to understand and recreate. There are many online resources for understanding the general operation of SSTCs so I will not be covering everything in detail here but only explaining the specs of my mini coil build here (links to more general resources below).
+After posting some pictures of my completed design I have had quite a few people ask me for schematics / files / build info. The original intention of the design was to create a single pcb driver for any possible configuration of moderately low voltage transformer based tesla coils that I could use as a simple and quick platform for developing a variety of small desktop tesla coil designs and learn more about sstc operation. This design is a mixture of steve wards class e and mini sstc builds with some small modifications. For detials on the design go to (https://www.stevehv.4hv.org/sstc5.htm).I developed the V0 pcb design to be milled out at home using a pcb mill using a ~0.5mm endmill. You dont have to use a mill here - thats just what I designed the tolerances for. Any method of diy pcb production should work. After developing and testing the driver I put together a small test coil, tuned everything, and had a relatively impressive mini coil in about a day. The V0 design has a well annotated schematic and pcb with descriptions and information that will hopefully be easy for the novice to understand and recreate. There are many online resources for understanding the general operation of SSTCs so I will not be covering everything in detail here but only explaining the specs of my mini coil build here (links to more general resources below).
 
 
 The V1 pcb design has been designed for proper pcb production and includes good high power design, external interrputer pins, better wire connection points, and has been made to be configurable for use with raw mains power using an external transformer as the low voltage source. As of writing this the pcbs are currently in production and have not arrived yet. When they do I will be testing mains versions of the design as well as some modular addons I have come up with and will post the designs here.
@@ -36,8 +36,8 @@ If you decided to use an atx power supply as a case like I did. Be sure to keep 
 
 For more detailed explainations of sstc operation & design:
 
-https://www.Stevehv.4hv.Org/sstcindex.Htm
+https://www.stevehv.4hv.org/sstcindex.htm
 
-https://www.Loneoceans.Com/labs/#
+https://www.loneoceans.com/labs/#
 
-http://kaizerpowerelectronics.Dk/
+http://kaizerpowerelectronics.dk/
